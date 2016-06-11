@@ -7,6 +7,9 @@ const CounterReducer$ = Rx.Observable.merge(
 
   CounterActions.decrement$.map((n = 1) =>
     counterState => counterState - n),
+
+  CounterActions.async$.delay(1000).map((n = 1) =>
+    counterState => counterState - n),
 )
 .startWith(() => 0) // function which returns initial state (optional)
 

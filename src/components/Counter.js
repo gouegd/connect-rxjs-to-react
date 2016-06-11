@@ -9,6 +9,7 @@ export class Counter extends React.Component {
     counter: React.PropTypes.number.isRequired,
     increment: React.PropTypes.func.isRequired,
     decrement: React.PropTypes.func.isRequired,
+    async: React.PropTypes.func.isRequired,
   };
 
   render() {
@@ -21,6 +22,7 @@ export class Counter extends React.Component {
         <button onClick={ () => this.props.increment(10) } className="counter__button counter__button--i10">+10</button>
         <button onClick={ () => this.props.decrement(1) } className="counter__button counter__button--d1">-</button>
         <button onClick={ () => this.props.decrement(10) } className="counter__button counter__button--d10">-10</button>
+        <button onClick={ () => this.props.async(42) } className="counter__button counter__button--async">async call</button>
       </div>
     );
   }
@@ -32,4 +34,5 @@ export default connect(state$, state => ({
   // decrement(n) { CounterActions.decrement$.next(n) }
   increment: bindAction(CounterActions.increment$),
   decrement: bindAction(CounterActions.decrement$),
+  async: bindAction(CounterActions.async$),
 }))(Counter);
