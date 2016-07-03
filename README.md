@@ -1,3 +1,5 @@
+(gouegd: changed some things on the scoped reducers branch to experiment with a loading indicator when using RxJS)
+
 # connect-rxjs-to-react
 
 Simple way to connect [rxjs](https://www.npmjs.com/package/rxjs) to React component in Redux style... but without dispatch and constants.
